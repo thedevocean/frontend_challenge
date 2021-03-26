@@ -4,12 +4,16 @@ import CountDisplay from './CountDisplay';
 
 function App() {
 
-  const [count, setCout] = useState(0);
+  const [countOne, setCountOne] = useState(0);
+  const [countTwo, setCountTwo] = useState(0);
 
   return (
     <div>
-      <CountButton onClick={() => setCout(count+1)}/>
-      <CountDisplay count={count} />
+      <CountButton
+        countOneButtonClick={() => setCountOne(countOne+1)}
+        countTwoButtonClick={() => setCountTwo(countTwo+1)}
+        />
+      <CountDisplay countOne={countOne} countTwo={countTwo} />
     </div>
   );
 }
