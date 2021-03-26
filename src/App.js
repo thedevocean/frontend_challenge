@@ -1,9 +1,15 @@
-import './App.css';
+import {useState} from 'react'
+import CountButton from './CountButton';
+import CountDisplay from './CountDisplay';
 
 function App() {
+
+  const [count, setCout] = useState(0);
+
   return (
-    <div className="App">
-      Initial setup
+    <div>
+      <CountButton onClick={() => setCout(count+1)}/>
+      <CountDisplay count={count} />
     </div>
   );
 }
